@@ -1,8 +1,11 @@
 use('platzi_store')
 
-db.createCollection('users',{
+//obtener los esquemas actuales
+db.getCollectionInfos()
 
-  validator:{
+db.runCommand({
+  collMod:'users',
+   validator:{
     $jsonSchema:{
       bsonType:'object',
       required: [ "email","password", "role"],
