@@ -1,0 +1,19 @@
+use('platzi_store')
+
+db.users.insertOne({
+  email:'Fer@gmail.com',
+  password:'Fer2315dfa',
+  role: 'customer',
+  social_accounts: ['twitter', 'facebook'],
+   address:{
+    street: 'ca 777',
+    city: 'Cali',
+    zip: '1303'
+  },
+  shipping_address:{
+    street: 'ca 27 15',
+    city: 'Cali',
+    zip: '13013'
+  }
+
+})

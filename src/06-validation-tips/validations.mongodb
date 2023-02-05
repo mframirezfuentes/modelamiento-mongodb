@@ -9,7 +9,7 @@ db.runCommand({
     $jsonSchema:{
       bsonType:'object',
       required: [ "email","password", "role"],
-      additionalProperties: true,
+      //additionalProperties: true,
       properties:{
         name: {
           bsonType: 'string'
