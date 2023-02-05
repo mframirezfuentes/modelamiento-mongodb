@@ -17,7 +17,8 @@ db.createCollection('users',{
           bsonType: 'string'
         },
         password: {
-          bsonType: 'string'
+          bsonType: 'string',
+          pattern: "^[A-Za-z0-9]{8,100}$"
         },
         age:{
           bsonType: 'number',

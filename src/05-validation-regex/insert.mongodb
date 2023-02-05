@@ -3,7 +3,7 @@ use('platzi_store')
 db.users.insertOne({
   last_name: "Ballero",
   email:'Diego@gmail.com',
-  password:'sadsa',
+  password:'Fernanda1750',
   role: "seller",
   age: 19,
   isSingle: false

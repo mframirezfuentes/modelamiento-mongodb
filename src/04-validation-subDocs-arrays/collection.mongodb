@@ -1,35 +1,35 @@
 use('platzi_store')
 
-db.createCollection('users',{
+db.createCollection('products',{
 
   validator:{
     $jsonSchema:{
       bsonType:'object',
-      required: [ "email","password", "role"],
+      required: [ "name"],
       properties:{
         name: {
           bsonType: 'string'
         },
-        last_name: {
-          bsonType: 'string'
+        sizes:{
+          bsonType: 'array',
+          minItems: 1,
+          uniqueItems: true,
+          items: {
+            bsonType:'string'
+          },
         },
-        email: {
-          bsonType: 'string'
-        },
-        password: {
-          bsonType: 'string'
-        },
-        age:{
-          bsonType: 'number',
-          minimum: 18,
-          maximum: 99
-        },
-        isSingle: {
-          bsonType: 'bool'
-        },
-       role: {
-        enum:['customer', 'seller', 'admin']
-      }
+        category:{
+          bsonType: 'object',
+          required: [ "name"],
+          properties:{
+            name: {
+              bsonType: 'string'
+            },
+            image: {
+              bsonType: 'string'
+            },
+          }
+        }
       }
 
     }
