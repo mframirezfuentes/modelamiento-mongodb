@@ -1,0 +1,5 @@
+use('platzi_store')
+
+db.orders.find({
+  "items.qty":3
+})
