@@ -1,0 +1,24 @@
+use('platzi_store')
+
+db.products.find()
+db.stores.find()
+
+
+db.stores.aggregate([
+  {
+    /**
+     * from: The target collection.
+     * localField: The local join field.
+     * foreignField: The target join field.
+     * as: The name for the results.
+     * pipeline: Optional pipeline to run on the foreign collection.
+     * let: Optional variables to use in the pipeline field stages.
+     */
+    $lookup: {
+      from: 'products',
+      localField: 'products_ids',
+      foreignField: '_id',
+      as: 'products'
+    }
+  }
+])
