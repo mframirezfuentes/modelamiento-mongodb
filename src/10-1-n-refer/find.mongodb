@@ -1,0 +1,33 @@
+use('platzi_store')
+db.orders.find()
+
+//  db.orders.find({
+//    userId: ObjectId('63dfc8b36bc010756183109f')
+//    })
+
+db.users.aggregate([
+  {
+/**
+ * query: The query in MQL.
+ */
+ $match: {
+   _id:ObjectId('63dfc7da8afbb00905531e1a')
+ }
+  },
+  {
+    /**
+     * from: The target collection.
+     * localField: The local join field.
+     * foreignField: The target join field.
+     * as: The name for the results.
+     * pipeline: Optional pipeline to run on the foreign collection.
+     * let: Optional variables to use in the pipeline field stages.
+     */
+    $lookup: {
+      from: 'orders',
+      localField: '_id',
+      foreignField: 'userId',
+      as: 'orders'
+    }
+  }
+])
