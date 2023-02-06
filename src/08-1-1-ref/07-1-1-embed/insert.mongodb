@@ -1,0 +1,19 @@
+use('platzi_store')
+
+db.stores.insertOne({
+  storeId: 'ST001',
+  name: 'Fer Store',
+  addres: "Cr  234"
+
+})
+
+db.stores_details.insertOne({
+  storeId: 'ST001',
+  description: "tex tex tex",
+  manager:{
+    email: 'fer@gmail.com',
+    cellphone: '5145448'
+  }
+
+
+})
