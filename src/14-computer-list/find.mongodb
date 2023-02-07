@@ -1,0 +1,4 @@
+use('platzi_store')
+db.orders.find()
+db.products.find()
+db.orders.find({_id: ObjectId('63e2428192a086e98ae58b64')})
